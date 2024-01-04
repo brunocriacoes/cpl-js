@@ -65,9 +65,10 @@ function manipular_visibilidade() {
     }
     if (valida_cpl_3) {
         cpl('cpl02', false);
-        cpl('cpl03', true);
+        cpl_elementos('cpl02-video', false);
         cpl_elementos('btn-vip', false);
         cpl_elementos('btn-decididos', true);
+        return null;
     }
     requestAnimationFrame(manipular_visibilidade)
 }
