@@ -21,7 +21,7 @@ function cpl_elementos(class_name, visible) {
     if (visible) {
         document.querySelector(`#${class_name}`)?.removeAttribute('hidden');
     } else {
-        document.querySelector(`#${class_name}-fechado`)?.setAttribute('hidden', 'true');
+        document.querySelector(`#${class_name}`)?.setAttribute('hidden', 'true');
     }
 }
 
