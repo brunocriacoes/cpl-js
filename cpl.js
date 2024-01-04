@@ -54,8 +54,8 @@ function manipular_visibilidade() {
     let valida_cpl_3 = valida_data(4, 11, 0, 0);
     cpl('cpl02', false);
     cpl('cpl03', false);
-    cpl_elementos('btn-vip', false);
     cpl_elementos('btn-decididos', false);
+    cpl_elementos('btn-vip', true);
     if (!validar_ano && !validar_mes) {
         return null;
     }
@@ -65,7 +65,7 @@ function manipular_visibilidade() {
     }
     if (valida_cpl_3) {
         cpl('cpl03', true);
-        cpl_elementos('btn-vip', true);
+        cpl_elementos('btn-vip', false);
         cpl_elementos('btn-decididos', true);
     }
     requestAnimationFrame(manipular_visibilidade)
