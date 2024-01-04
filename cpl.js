@@ -19,13 +19,13 @@ function Data() {
 
 function cpl(class_name, visible) {
     if (visible) {
-        document.querySelector(`.${class_name}`)?.removeAttribute('hidden');
-        document.querySelector(`.${class_name}-fechado`)?.setAttribute('hidden', 'true');
-        document.querySelector(`.${class_name}-liberado`)?.removeAttribute('hidden');
+        document.querySelector(`#${class_name}`)?.removeAttribute('hidden');
+        document.querySelector(`#${class_name}-fechado`)?.setAttribute('hidden', 'true');
+        document.querySelector(`#${class_name}-liberado`)?.removeAttribute('hidden');
     } else {
-        document.querySelector(`.${class_name}`)?.setAttribute('hidden', 'true');
-        document.querySelector(`.${class_name}-fechado`)?.removeAttribute('hidden');
-        document.querySelector(`.${class_name}-liberado`)?.setAttribute('hidden','true');
+        document.querySelector(`#${class_name}`)?.setAttribute('hidden', 'true');
+        document.querySelector(`#${class_name}-fechado`)?.removeAttribute('hidden');
+        document.querySelector(`#${class_name}-liberado`)?.setAttribute('hidden','true');
     }
 }
 
@@ -47,6 +47,7 @@ function manipular_visibilidade() {
     }
     if (valida_cpl_2) {
         cpl('cpl02', true);
+        cpl('cpl01', false);
     }
     if (valida_cpl_3) {
         cpl('cpl03', true);
