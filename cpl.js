@@ -67,6 +67,7 @@ function manipular_visibilidade() {
         cpl_elementos('cpl02-video', false);
         cpl_elementos('btn-vip', false);
         cpl_elementos('btn-decididos', true);
+        cpl('cpl03', true);
         return null;
     }
     if( !valida_cpl_2 || !valida_cpl_3 ) {
