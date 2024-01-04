@@ -17,15 +17,27 @@ function Data() {
     }
 }
 
+function cpl_elementos(class_name, visible) {
+    if (visible) {
+        document.querySelector(`#${class_name}`)?.removeAttribute('hidden');
+    } else {
+        document.querySelector(`#${class_name}-fechado`)?.setAttribute('hidden', 'true');
+    }
+}
+
 function cpl(class_name, visible) {
     if (visible) {
         document.querySelector(`#${class_name}`)?.removeAttribute('hidden');
         document.querySelector(`#${class_name}-fechado`)?.setAttribute('hidden', 'true');
         document.querySelector(`#${class_name}-liberado`)?.removeAttribute('hidden');
+        document.querySelector(`#${class_name}-material`)?.removeAttribute('hidden');
+        document.querySelector(`#${class_name}-video`)?.removeAttribute('hidden');
     } else {
         document.querySelector(`#${class_name}`)?.setAttribute('hidden', 'true');
         document.querySelector(`#${class_name}-fechado`)?.removeAttribute('hidden');
         document.querySelector(`#${class_name}-liberado`)?.setAttribute('hidden','true');
+        document.querySelector(`#${class_name}-material`)?.setAttribute('hidden','true');
+        document.querySelector(`#${class_name}-video`)?.setAttribute('hidden','true');
     }
 }
 
@@ -42,6 +54,8 @@ function manipular_visibilidade() {
     let valida_cpl_3 = valida_data(4, 11, 0, 0);
     cpl('cpl02', false);
     cpl('cpl03', false);
+    cpl_elementos('btn-vip', false);
+    cpl_elementos('btn-decididos', false);
     if (!validar_ano && !validar_mes) {
         return null;
     }
@@ -51,6 +65,8 @@ function manipular_visibilidade() {
     }
     if (valida_cpl_3) {
         cpl('cpl03', true);
+        cpl_elementos('btn-vip', true);
+        cpl_elementos('btn-decididos', true);
     }
     requestAnimationFrame(manipular_visibilidade)
 }
