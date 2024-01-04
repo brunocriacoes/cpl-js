@@ -69,7 +69,9 @@ function manipular_visibilidade() {
         cpl_elementos('btn-decididos', true);
         return null;
     }
-    requestAnimationFrame(manipular_visibilidade)
+    if( !valida_cpl_2 || !valida_cpl_3 ) {
+        requestAnimationFrame(manipular_visibilidade);
+    }
 }
 
 window.onload = () => {    
