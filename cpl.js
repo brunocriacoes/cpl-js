@@ -44,6 +44,8 @@ function cpl(class_name, visible) {
 function valida_data(dia, hora, minuto, segundo) {
     let data = Data();
     console.log({
+        timeInput: Date.parse(`2024-01-${dia} ${hora}:${minuto}:${segundo}`),
+        timejs: Date.parse(`2024-01-${data.dia} ${data.hora}:${data.minutos}:${data.segundos}`),
         input : {dia, hora, minuto, segundo},
         datajs : {dia: data.dia, hora:data.hora, minuto: data.minutos, segundo: data.segundos}
     })
