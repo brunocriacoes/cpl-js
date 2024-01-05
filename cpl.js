@@ -47,7 +47,8 @@ function valida_data(dia, hora, minuto, segundo) {
         input : {dia, hora, minuto, segundo},
         datajs : {dia: data.dia, hora:data.hora, minuto: data.minutos, segundo: data.segundos}
     })
-    return data.dia >= dia  && data.hora >= hora && data.minutos >= minuto && data.segundos >= segundo;
+    // return data.dia >= dia  && data.hora >= hora && data.minutos >= minuto && data.segundos >= segundo;
+    return data.dia >= dia;
 }
 
 
