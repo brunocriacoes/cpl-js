@@ -50,8 +50,8 @@ function manipular_visibilidade() {
     let data = Data()
     let validar_ano = data.ano === 2024;
     let validar_mes = data.mes === 1;
-    let valida_cpl_2 = valida_data(4, 10, 0, 0);
-    let valida_cpl_3 = valida_data(4, 11, 0, 0);
+    let valida_cpl_2 = valida_data(4, 15, 50, 0);
+    let valida_cpl_3 = valida_data(5, 16, 26, 0);
     cpl('cpl02', false);
     cpl('cpl03', false);
     cpl_elementos('btn-decididos', false);
@@ -60,6 +60,7 @@ function manipular_visibilidade() {
         return null;
     }
     if (valida_cpl_2) {
+        console.log('tafarel');
         cpl('cpl02', true);
         cpl('cpl01', false);
     }
