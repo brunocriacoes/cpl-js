@@ -43,8 +43,13 @@ function cpl(class_name, visible) {
 
 function valida_data(dia, hora, minuto, segundo) {
     let data = Data();
+    console.log({
+        input : {dia, hora, minuto, segundo},
+        datajs : {dia: data.dia, hora:data.hora, minuto: data.minutos, segundo: data.segundos}
+    })
     return data.dia === dia && data.hora >= hora && data.minutos >= minuto && data.segundos >= segundo;
 }
+
 
 function manipular_visibilidade() {
     let data = Data()
@@ -59,7 +64,7 @@ function manipular_visibilidade() {
     if (!validar_ano && !validar_mes) {
         return null;
     }
-    console.log({n:'tafarel', valida_cpl_2});
+    
     if (valida_cpl_2) {
         cpl('cpl02', true);
         cpl('cpl01', false);
@@ -71,6 +76,7 @@ function manipular_visibilidade() {
         cpl('cpl03', true);
         return null;
     }
+    return null;
     if( !valida_cpl_2 || !valida_cpl_3 ) {
         requestAnimationFrame(manipular_visibilidade);
     }
