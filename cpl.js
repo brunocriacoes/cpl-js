@@ -41,33 +41,26 @@ function cpl(class_name, visible) {
     }
 }
 
-function valida_data(dia, hora, minuto, segundo) {
+function valida_data(dataHora) {
     let data = Data();
-    console.log({
-        timeInput: Date.parse(`2024-01-${dia} ${hora}:${minuto}:${segundo}`),
-        timejs: Date.parse(`2024-01-${data.dia} ${data.hora}:${data.minutos}:${data.segundos}`),
-        input : {dia, hora, minuto, segundo},
-        datajs : {dia: data.dia, hora:data.hora, minuto: data.minutos, segundo: data.segundos}
-    })
-    // return data.dia >= dia  && data.hora >= hora && data.minutos >= minuto && data.segundos >= segundo;
-    return data.dia >= dia;
+    let hojeTime = Date.parse(`${data.ano}-${data.mes}-${data.dia} ${data.hora}:${data.minutos}:${data.segundos}`);
+    let eventTime = Date.parse(dataHora);   
+    return hojeTime >= eventTime;
 }
-
 
 function manipular_visibilidade() {
     let data = Data()
     let validar_ano = data.ano === 2024;
     let validar_mes = data.mes === 1;
-    let valida_cpl_2 = valida_data(4, 15, 50, 0);
-    let valida_cpl_3 = valida_data(5, 16, 26, 0);
+    let valida_cpl_2 = valida_data('2024-01-04 15:50:00');
+    let valida_cpl_3 = valida_data('2024-01-05 16:26:00');
     cpl('cpl02', false);
     cpl('cpl03', false);
     cpl_elementos('btn-decididos', false);
     cpl_elementos('btn-vip', true);
     if (!validar_ano && !validar_mes) {
         return null;
-    }
-    
+    }    
     if (valida_cpl_2) {
         cpl('cpl02', true);
         cpl('cpl01', false);
