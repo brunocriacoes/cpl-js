@@ -59,8 +59,8 @@ function manipular_visibilidade() {
     if (!validar_ano && !validar_mes) {
         return null;
     }
+    console.log({n:'tafarel', valida_cpl_2});
     if (valida_cpl_2) {
-        console.log('tafarel');
         cpl('cpl02', true);
         cpl('cpl01', false);
     }
