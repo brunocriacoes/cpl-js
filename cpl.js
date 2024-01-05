@@ -72,7 +72,6 @@ function manipular_visibilidade() {
         cpl('cpl03', true);
         return null;
     }
-    return null;
     if( !valida_cpl_2 || !valida_cpl_3 ) {
         requestAnimationFrame(manipular_visibilidade);
     }
